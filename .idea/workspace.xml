@@ -43,11 +43,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Code.Main" />
+      <option name="MAIN_CLASS_NAME" value="code.Main" />
       <module name="SocketChat" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Code.*" />
+          <option name="PATTERN" value="code.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582356320902</updated>
-      <workItem from="1582356329406" duration="2079000" />
+      <workItem from="1582356329406" duration="2380000" />
     </task>
     <servers />
   </component>

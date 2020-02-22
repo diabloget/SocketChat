@@ -1,4 +1,4 @@
-package Code;
+package code;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
