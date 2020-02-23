@@ -2,6 +2,7 @@ package code;
 
 import gui.Labels;
 import gui.Labels;
+import gui.TextFields;
 import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
@@ -9,6 +10,7 @@ import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,6 +37,7 @@ public class Main extends Application {
         verticalTB.setOrientation(Orientation.VERTICAL);
 
         //BorderPane Config
+        base.setBottom(TextFields.TextFieldMaker());
         base.setTop(horizontalTB);
         base.setLeft(verticalTB);
         base.setCenter(messages);
