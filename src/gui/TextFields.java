@@ -14,14 +14,13 @@ public class TextFields {
         writer.setOnKeyPressed(event -> {
             if(event.getCode().equals(KeyCode.ENTER)) {
 
-                // do something
+
                 writer.clear();
 
             }
         });
 
         return writer;
-
     }
 
 }

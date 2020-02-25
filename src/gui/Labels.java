@@ -44,14 +44,15 @@ public class Labels {
 
         if(own){
 
-            text = message.split(":")[0];
+            System.out.println(message);
+            text = message.split("::")[0];
 
             label1 = Textlabel("You:", text, own);
 
         }else{
-
-            port = message.split(":")[0];
-            text = message.split(":")[1];
+            System.out.println(message);
+            port = message.split("::")[0];
+            text = message.split("::")[1];
 
             label1 = Textlabel(port+":", text, own);
 
