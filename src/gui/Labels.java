@@ -44,7 +44,7 @@ public class Labels {
 
         if(own){
 
-            System.out.println(message);
+            System.out.println("Esto llegó a los labels: " + message);
             text = message.split("::")[0];
 
             label1 = Textlabel("You:", text, own);

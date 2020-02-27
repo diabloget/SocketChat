@@ -8,8 +8,10 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
@@ -29,6 +31,7 @@ public class Client extends Application
     private static ToolBar verticalTB = new ToolBar();
     private static BorderPane base = new BorderPane();
     private static FlowPane messages = new FlowPane();
+    private static TextField textfield = new TextField();
     final static int ServerPort = 40100;
 
     public static void main(String args[]) throws UnknownHostException, IOException
@@ -53,16 +56,24 @@ public class Client extends Application
                 while (true) {
 
                     // read the message to deliver.
-                    String message = scanner.nextLine();
+                    //String message = scanner.nextLine();
+                    //Platform.runLater(() -> messages.getChildren().add(Labels.Textconverter(message, true)));
 
-                    Platform.runLater(() -> messages.getChildren().add(Labels.Textconverter(message, true)));
+                    textfield.setOnKeyPressed(event -> {
+                        if(event.getCode().equals(KeyCode.ENTER)) {
 
-                    try {
-                        // write on the output stream
-                        dataoutputstream.writeUTF(message);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                            try {
+                                // write on the output stream
+                                dataoutputstream.writeUTF(textfield.getText());
+                                messages.getChildren().add(Labels.Textconverter(textfield.getText(), true));
+                                textfield.clear();
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
                 }
             }
         });
@@ -101,7 +112,7 @@ public class Client extends Application
         verticalTB.setOrientation(Orientation.VERTICAL);
 
         //BorderPane Config
-        base.setBottom(TextFields.TextFieldMaker());
+        base.setBottom(textfield);
         base.setTop(horizontalTB);
         base.setLeft(verticalTB);
         base.setCenter(messages);
