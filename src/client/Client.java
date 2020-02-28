@@ -1,6 +1,7 @@
-package code;
+package client;
 
-import gui.Buttons;
+import code.ArrayList;
+import code.TextWorker;
 import gui.Labels;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -26,8 +27,8 @@ public class Client extends Application
     private static ToolBar horizontalTB = new ToolBar();
     private static ToolBar verticalTB = new ToolBar();
     private static BorderPane base = new BorderPane();
-    private static FlowPane messages = new FlowPane();
-    private static TextField textfield = new TextField();
+    private static TextField messagefield = new TextField();
+    private static TextField chatfield = new TextField();
     final static int ServerPort = 40100;
 
     public static void main(String args[]) throws UnknownHostException, IOException
@@ -44,6 +45,16 @@ public class Client extends Application
         DataInputStream datainputstream = new DataInputStream(socket.getInputStream());
         DataOutputStream dataoutputstream = new DataOutputStream(socket.getOutputStream());
 
+        //Selector de flowpane
+        chatfield.setOnKeyPressed(event -> {
+            if(event.getCode().equals(KeyCode.ENTER)) {
+
+                FlowPane flowpane = ArrayList.tester(chatfield.getText());
+                base.setCenter(flowpane);
+
+            }
+        });
+
         // Hilo escritor
         Thread sender = new Thread(new Runnable()
         {
@@ -55,14 +66,15 @@ public class Client extends Application
                     //String message = scanner.nextLine();
                     //Platform.runLater(() -> messages.getChildren().add(Labels.Textconverter(message, true)));
 
-                    textfield.setOnKeyPressed(event -> {
+                    messagefield.setOnKeyPressed(event -> {
                         if(event.getCode().equals(KeyCode.ENTER)) {
 
                             try {
+                                FlowPane flowpane = (FlowPane) base.getCenter();
                                 // write on the output stream
-                                dataoutputstream.writeUTF(textfield.getText());
-                                messages.getChildren().add(Labels.Textconverter(textfield.getText(), true));
-                                textfield.clear();
+                                dataoutputstream.writeUTF(messagefield.getText() + "::" + chatfield.getText());
+                                flowpane.getChildren().add(Labels.Textconverter(messagefield.getText(), true));
+                                messagefield.clear();
 
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -91,9 +103,9 @@ public class Client extends Application
 
                         }else{
 
-                            // read the message sent to this client
-                            Platform.runLater(() -> messages.getChildren().add(Labels.Textconverter(message, false)));
-                            System.out.println(message);
+                            FlowPane flowpane = ArrayList.tester(TextWorker.portdivider(message));
+                            Platform.runLater(() -> flowpane.getChildren().add(Labels.Textconverter(message, false)));
+                            base.setCenter(flowpane);
 
                         }
                     } catch (IOException e) {
@@ -114,22 +126,17 @@ public class Client extends Application
     public void start(Stage Stage) throws FileNotFoundException {
 
         //Toolbar HorizontalTB config
+        horizontalTB.getItems().add(chatfield);
 
         //Toolbar verticalTB config
         verticalTB.setOrientation(Orientation.VERTICAL);
 
         //BorderPane Config
-        base.setBottom(textfield);
+        base.setBottom(messagefield);
         base.setTop(horizontalTB);
         base.setLeft(verticalTB);
-        base.setCenter(messages);
+        //base.setCenter(messages);
         base.setStyle("-fx-background-color:#3b3838");
-
-        //Flowpane Messages config
-        messages.setVgap(5);
-        messages.setOrientation(Orientation.VERTICAL);
-        messages.setMaxSize(450, 500);
-        messages.setStyle("-fx-background-color:#6a6565");
 
         Scene mainscene = new Scene(base,650,730);
         Stage.setMaxWidth(650);
