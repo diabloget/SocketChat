@@ -115,7 +115,7 @@ public class Client extends Application
 
                             FlowPane flowpane = ArrayList.tester(TextWorker.portdivider(message));
                             Platform.runLater(() -> flowpane.getChildren().add(Labels.Textconverter(message, false)));
-                            base.setCenter(flowpane);
+                            Platform.runLater(() -> base.setCenter(flowpane));
 
                         }
                     } catch (IOException e) {
