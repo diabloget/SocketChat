@@ -29,6 +29,7 @@ public class Client extends Application
     private static BorderPane base = new BorderPane();
     private static TextField messagefield = new TextField();
     private static TextField chatfield = new TextField();
+    private static String actualport;
     final static int ServerPort = 40100;
 
     public static void main(String args[]) throws UnknownHostException, IOException
@@ -70,9 +71,10 @@ public class Client extends Application
                         if(event.getCode().equals(KeyCode.ENTER)) {
 
                             try {
-                                FlowPane flowpane = (FlowPane) base.getCenter();
                                 // write on the output stream
-                                dataoutputstream.writeUTF(messagefield.getText() + "::" + chatfield.getText());
+                                actualport = chatfield.getText();
+                                dataoutputstream.writeUTF(messagefield.getText() + "::" + actualport);
+                                FlowPane flowpane = ArrayList.tester(actualport);
                                 flowpane.getChildren().add(Labels.Textconverter(messagefield.getText(), true));
                                 messagefield.clear();
 
@@ -103,7 +105,9 @@ public class Client extends Application
 
                         }else{
 
-                            FlowPane flowpane = ArrayList.tester(TextWorker.portdivider(message));
+                            actualport = TextWorker.portdivider(message);
+                            chatfield.setText(actualport);
+                            FlowPane flowpane = ArrayList.tester(actualport);
                             Platform.runLater(() -> flowpane.getChildren().add(Labels.Textconverter(message, false)));
                             base.setCenter(flowpane);
 
