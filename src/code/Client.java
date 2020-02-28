@@ -1,9 +1,7 @@
 package code;
 
-import code.RandomPort;
-
+import gui.Buttons;
 import gui.Labels;
-import gui.TextFields;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Orientation;
@@ -15,15 +13,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
+import static gui.Labels.FirstMessage;
 
 public class Client extends Application
 {
@@ -83,17 +79,28 @@ public class Client extends Application
         {
             @Override
             public void run() {
+                boolean firstmessage = true;
 
                 while (true) {
+
                     try {
-                        // read the message sent to this client
                         String message = datainputstream.readUTF();
-                        Platform.runLater(() -> messages.getChildren().add(Labels.Textconverter(message, false)));
-                        System.out.println(message);
+
+                        if(firstmessage){
+                            horizontalTB.getItems().add(FirstMessage(message));
+
+                        }else{
+
+                            // read the message sent to this client
+                            Platform.runLater(() -> messages.getChildren().add(Labels.Textconverter(message, false)));
+                            System.out.println(message);
+
+                        }
                     } catch (IOException e) {
 
                         e.printStackTrace();
                     }
+                    firstmessage = false;
                 }
             }
         });
@@ -123,19 +130,6 @@ public class Client extends Application
         messages.setOrientation(Orientation.VERTICAL);
         messages.setMaxSize(450, 500);
         messages.setStyle("-fx-background-color:#6a6565");
-
-        //Pruebas
-        /*
-        String ex1 = new String("Mae, ¿A qué hora llego a tu casa?");
-        String ex2 = new String("Por cierto, ¿ya comiste? Pensaba llevar una pizza y la pc para volar pichazos toda la noche. Nos vemos en unas horas crack.");
-        String ex3 = new String("40505: Mae sí, pero casi nada, tráigase la pizza de fijo. ");
-        String ex4 = new String("40505: Lléguese tipo 8pm");
-
-        messages.getChildren().add(Labels.Textconverter(ex1, true));
-        messages.getChildren().add(Labels.Textconverter(ex2, true));
-        messages.getChildren().add(Labels.Textconverter(ex3, false));
-        messages.getChildren().add(Labels.Textconverter(ex4, false));
-        */
 
         Scene mainscene = new Scene(base,650,730);
         Stage.setMaxWidth(650);
