@@ -9,7 +9,7 @@ public class Flowpanes {
         FlowPane flowpane = new FlowPane();
         flowpane.setVgap(5);
         flowpane.setOrientation(Orientation.VERTICAL);
-        flowpane.setMaxSize(450, 500);
+        flowpane.setMaxSize(450, 610);
         flowpane.setStyle("-fx-background-color:#6a6565");
 
 

@@ -2,17 +2,22 @@ package client;
 
 import code.ArrayList;
 import code.TextWorker;
+import code.Toolbars;
 import gui.Labels;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,7 +30,6 @@ import static gui.Labels.FirstMessage;
 public class Client extends Application
 {
     private static ToolBar horizontalTB = new ToolBar();
-    private static ToolBar verticalTB = new ToolBar();
     private static BorderPane base = new BorderPane();
     private static TextField messagefield = new TextField();
     private static TextField chatfield = new TextField();
@@ -52,6 +56,12 @@ public class Client extends Application
                 FlowPane flowpane = ArrayList.tester(chatfield.getText());
                 base.setCenter(flowpane);
 
+            }
+        });
+
+        chatfield.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 1) {
+                chatfield.clear();
             }
         });
 
@@ -128,13 +138,14 @@ public class Client extends Application
         //Toolbar HorizontalTB config
         horizontalTB.getItems().add(chatfield);
 
-        //Toolbar verticalTB config
-        verticalTB.setOrientation(Orientation.VERTICAL);
+        //Textfield messagefield config
+        messagefield.setMinHeight(35);
+        messagefield.setFont(new Font("Arial Black", 12));
 
         //BorderPane Config
         base.setBottom(messagefield);
         base.setTop(horizontalTB);
-        base.setLeft(verticalTB);
+        base.setLeft(Toolbars.getRecentchatstoolbar());
         //base.setCenter(messages);
         base.setStyle("-fx-background-color:#3b3838");
 

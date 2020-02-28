@@ -2,6 +2,7 @@ package code;
 
 import gui.Buttons;
 import gui.Flowpanes;
+import gui.Labels;
 import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
@@ -22,6 +23,7 @@ public class ArrayList {
 
         }else{
 
+            Toolbars.Toolbaradder(Labels.RecentChats(port));
             flowpanes.add(Flowpanes.chatflowpane());
             ports.add(port);
             return flowpanes.get(flowpanes.size()-1);
@@ -33,24 +35,6 @@ public class ArrayList {
         flowpanes.add(flowpane);
         ports.add(port);
 
-    }
-
-    public static Label RecentChats(String port){
-        Label recentchat = new Label(port);
-        recentchat.setStyle("-fx-background-color:#6a6565");
-        recentchat.setFont(new Font("Arial Black", 13));
-        recentchat.setWrapText(true);
-
-        recentchat.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 1) {
-                Clipboard clipboard = Clipboard.getSystemClipboard();
-                ClipboardContent content = new ClipboardContent();
-                content.putString(port);
-                clipboard.setContent(content);
-            }
-        });
-
-        return recentchat;
     }
 
 }

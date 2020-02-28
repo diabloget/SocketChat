@@ -5,6 +5,8 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.text.Font;
 import sun.font.TextLabel;
 
@@ -73,5 +75,38 @@ public class Labels {
         return yourport;
 
     }
+    public static Label RecentChats(String port){
+        Label recentchat = new Label(port);
+        recentchat.setStyle("-fx-background-color:#ffff0c");
+        recentchat.setFont(new Font("Arial Black", 13));
+        recentchat.setPadding(new Insets(8, 15, 8, 15));
+        recentchat.setWrapText(true);
+        recentchat.setMaxWidth(158);
+        recentchat.setMinWidth(158);
+
+        recentchat.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 1) {
+                Clipboard clipboard = Clipboard.getSystemClipboard();
+                ClipboardContent content = new ClipboardContent();
+                content.putString(port);
+                clipboard.setContent(content);
+            }
+        });
+
+        return recentchat;
+    }
+
+    public static Label top(){
+        Label top = new Label("Your Recent Chats:");
+        top.setStyle("-fx-background-color:#6f6f6e");
+        top.setFont(new Font("Arial Black", 13));
+        top.setPadding(new Insets(15, 10, 15, 10));
+        top.setWrapText(true);
+        top.setMaxWidth(150);
+        top.setMinWidth(150);
+
+        return top;
+    }
+
 
 }
