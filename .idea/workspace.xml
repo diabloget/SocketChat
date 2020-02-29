@@ -1,127 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6614166f-54b2-4074-84b2-303b86382698" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/code/ArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/code/TextWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/Flowpanes.java" afterDir="false" />
+    <list default="true" id="1fa30317-33ea-4a0c-9748-1a5097dc6a6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/code/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SocketChat/code/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/code/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SocketChat/code/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/code/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SocketChat/code/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/META-INF/SocketChat.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/code/Client$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/code/Client$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/code/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/code/RandomPort.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SocketChat/gui/Buttons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SocketChat/gui/Buttons.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SocketChat/gui/Labels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SocketChat/gui/Labels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/code/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Buttons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/gui/TextFields.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/list/LinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/list/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Labels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Labels.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="ProjectId" id="1Y9YY1Vcmnuj0fU0g1ifYdwHDnd" />
+  <component name="ProjectId" id="1YSCkSzMI6Yb8PTOIDd4mVCX9Pp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Server" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="git init" />
-    </option>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="code.Client" />
+      <option name="MAIN_CLASS_NAME" value="client.Client" />
       <module name="SocketChat" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="code.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="code.Main" />
-      <module name="SocketChat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="code.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainSocketClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="socketclient.MainSocketClient" />
-      <module name="SocketChat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="socketclient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainSocketServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="socketserver.MainSocketServer" />
-      <module name="SocketChat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="code.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="socketclient.Server" />
-      <module name="SocketChat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="socketclient.*" />
+          <option name="PATTERN" value="client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,10 +56,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="Application.MainSocketServer" />
-        <item itemvalue="Application.MainSocketClient" />
       </list>
     </recent_temporary>
   </component>
@@ -144,40 +64,43 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6614166f-54b2-4074-84b2-303b86382698" name="Default Changelist" comment="" />
-      <created>1582356320902</created>
+      <changelist id="1fa30317-33ea-4a0c-9748-1a5097dc6a6e" name="Default Changelist" comment="" />
+      <created>1582926751269</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582356320902</updated>
-      <workItem from="1582356329406" duration="6598000" />
-      <workItem from="1582431449204" duration="16943000" />
-      <workItem from="1582481365705" duration="21607000" />
-      <workItem from="1582589235998" duration="14382000" />
-      <workItem from="1582792950681" duration="285000" />
-      <workItem from="1582793275102" duration="2956000" />
-<<<<<<< Updated upstream
-      <workItem from="1582870545421" duration="16975000" />
-=======
-      <workItem from="1582870545421" duration="25859000" />
-      <workItem from="1582902311089" duration="3113000" />
->>>>>>> Stashed changes
+      <updated>1582926751269</updated>
+      <workItem from="1582926753025" duration="154000" />
+      <workItem from="1582927047012" duration="1022000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="WindowStateProjectService">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1582926796931">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582926796931" />
+    <state width="1237" height="74" key="GridCell.Tab.0.bottom" timestamp="1582928121863">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="74" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582928121863" />
+    <state width="677" height="147" key="GridCell.Tab.0.bottom/0.0.720.1240@0.0.720.1240" timestamp="1582927904413" />
+    <state width="1237" height="74" key="GridCell.Tab.0.center" timestamp="1582928121863">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="74" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582928121863" />
+    <state width="677" height="147" key="GridCell.Tab.0.center/0.0.720.1240@0.0.720.1240" timestamp="1582927904398" />
+    <state width="1237" height="74" key="GridCell.Tab.0.left" timestamp="1582928121863">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="74" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582928121863" />
+    <state width="677" height="147" key="GridCell.Tab.0.left/0.0.720.1240@0.0.720.1240" timestamp="1582927904398" />
+    <state width="1237" height="74" key="GridCell.Tab.0.right" timestamp="1582928121863">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="74" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582928121863" />
+    <state width="677" height="147" key="GridCell.Tab.0.right/0.0.720.1240@0.0.720.1240" timestamp="1582927904398" />
   </component>
 </project>
