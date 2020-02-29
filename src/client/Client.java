@@ -26,6 +26,7 @@ import static gui.Labels.FirstMessage;
 public class Client extends Application
 {
     private static FlowPane flowfixer;
+    private static String actualport;
     private static ToolBar horizontalTB = new ToolBar();
     private static BorderPane base = new BorderPane();
     private static TextField messagefield = new TextField();
@@ -50,7 +51,8 @@ public class Client extends Application
         chatfield.setOnKeyPressed(event -> {
             if(event.getCode().equals(KeyCode.ENTER)) {
 
-                FlowPane flowpane = ArrayList.tester(chatfield.getText());
+                actualport = chatfield.getText();
+                FlowPane flowpane = ArrayList.tester(actualport);
                 base.setCenter(flowpane);
 
             }
@@ -79,7 +81,7 @@ public class Client extends Application
                             try {
                                 FlowPane flowpane = (FlowPane) base.getCenter();
                                 // write on the output stream
-                                dataoutputstream.writeUTF(messagefield.getText() + "::" + chatfield.getText());
+                                dataoutputstream.writeUTF(messagefield.getText() + "::" + actualport);
                                 flowpane.getChildren().add(Labels.Textconverter(messagefield.getText(), true));
                                 messagefield.clear();
 
@@ -110,6 +112,7 @@ public class Client extends Application
 
                         }else{
 
+                            actualport = TextWorker.portdivider(message);
                             Platform.runLater(() -> flowfixer = ArrayList.tester(TextWorker.portdivider(message)));
                             Platform.runLater(() -> flowfixer.getChildren().add(Labels.Textconverter(message, false)));
                             Platform.runLater(() -> base.setCenter(flowfixer));
