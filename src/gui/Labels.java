@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.text.Font;
-import sun.font.TextLabel;
+//import sun.font.TextLabel;
 
 public class Labels {
 

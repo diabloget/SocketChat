@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6614166f-54b2-4074-84b2-303b86382698" name="Default Changelist" comment="">
+    <list default="true" id="1fa30317-33ea-4a0c-9748-1a5097dc6a6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SocketChat/gui/Labels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SocketChat/gui/Labels.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Labels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Labels.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,10 +25,16 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1Y9YY1Vcmnuj0fU0g1ifYdwHDnd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/SocketChat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SocketChat - Copy" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -44,18 +52,6 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="git init" />
-    </option>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
     </option>
   </component>
   <component name="RunManager" selected="Application.Client">
@@ -139,7 +135,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6614166f-54b2-4074-84b2-303b86382698" name="Default Changelist" comment="" />
+      <changelist id="1fa30317-33ea-4a0c-9748-1a5097dc6a6e" name="Default Changelist" comment="" />
       <created>1582356320902</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -151,6 +147,7 @@
       <workItem from="1582792950681" duration="285000" />
       <workItem from="1582793275102" duration="2956000" />
       <workItem from="1582870545421" duration="25654000" />
+      <workItem from="1582933752751" duration="1753000" />
     </task>
     <servers />
   </component>
@@ -169,5 +166,43 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="210" y="510" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582928292123">
+      <screen x="0" y="0" width="720" height="1240" />
+    </state>
+    <state x="210" y="510" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.720.1240@0.0.720.1240" timestamp="1582928292123" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1582933789006">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582933789006" />
+    <state width="1237" height="152" key="GridCell.Tab.0.bottom" timestamp="1582935347296">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="152" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582935347296" />
+    <state width="677" height="74" key="GridCell.Tab.0.bottom/0.0.720.1240@0.0.720.1240" timestamp="1582928399817" />
+    <state width="1237" height="152" key="GridCell.Tab.0.center" timestamp="1582935347296">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="152" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582935347296" />
+    <state width="677" height="74" key="GridCell.Tab.0.center/0.0.720.1240@0.0.720.1240" timestamp="1582928399817" />
+    <state width="1237" height="152" key="GridCell.Tab.0.left" timestamp="1582935347296">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="152" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582935347296" />
+    <state width="677" height="74" key="GridCell.Tab.0.left/0.0.720.1240@0.0.720.1240" timestamp="1582928399817" />
+    <state width="1237" height="152" key="GridCell.Tab.0.right" timestamp="1582935347296">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="152" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582935347296" />
+    <state width="677" height="74" key="GridCell.Tab.0.right/0.0.720.1240@0.0.720.1240" timestamp="1582928399817" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1582933759377">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1582933759377" />
+    <state x="275" y="71" width="672" height="678" key="search.everywhere.popup" timestamp="1582935042947">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="275" y="71" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1582935042947" />
   </component>
 </project>

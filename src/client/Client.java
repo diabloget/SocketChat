@@ -6,14 +6,10 @@ import code.Toolbars;
 import gui.Labels;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.geometry.Orientation;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
@@ -29,6 +25,7 @@ import static gui.Labels.FirstMessage;
 
 public class Client extends Application
 {
+    private static FlowPane flowfixer;
     private static ToolBar horizontalTB = new ToolBar();
     private static BorderPane base = new BorderPane();
     private static TextField messagefield = new TextField();
@@ -113,9 +110,9 @@ public class Client extends Application
 
                         }else{
 
-                            FlowPane flowpane = ArrayList.tester(TextWorker.portdivider(message));
-                            Platform.runLater(() -> flowpane.getChildren().add(Labels.Textconverter(message, false)));
-                            Platform.runLater(() -> base.setCenter(flowpane));
+                            Platform.runLater(() -> flowfixer = ArrayList.tester(TextWorker.portdivider(message)));
+                            Platform.runLater(() -> flowfixer.getChildren().add(Labels.Textconverter(message, false)));
+                            Platform.runLater(() -> base.setCenter(flowfixer));
 
                         }
                     } catch (IOException e) {
