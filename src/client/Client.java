@@ -14,12 +14,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.Socket;
 import java.io.*;
 import java.net.*;
-import java.util.Scanner;
 import static gui.Labels.FirstMessage;
 
 public class Client extends Application
@@ -27,35 +25,48 @@ public class Client extends Application
     private static ToolBar horizontalTB = new ToolBar();
     private static ToolBar verticalTB = new ToolBar();
     private static BorderPane base = new BorderPane();
-    private static TextField messagefield = new TextField();
     private static TextField chatfield = new TextField();
+<<<<<<< Updated upstream
     private static String actualport;
+=======
+    private static TextField portfield = new TextField();
+>>>>>>> Stashed changes
     final static int ServerPort = 40100;
 
-    public static void main(String args[]) throws UnknownHostException, IOException
+    public static void main(String args[]) throws IOException
     {
-        Scanner scanner = new Scanner(System.in);
 
-        // "localhost" equivale a la ip local, en éste caso 127.0.0.27.
+        // "localhost" equivale a la ip local.
         InetAddress ip = InetAddress.getByName("localhost");
 
-        // Crea la conexión
+        /**
+         * Se crea la conexión con el servidor.
+         */
         Socket socket = new Socket(ip, ServerPort);
 
-        // Input y outputs
+        // Input y output
         DataInputStream datainputstream = new DataInputStream(socket.getInputStream());
         DataOutputStream dataoutputstream = new DataOutputStream(socket.getOutputStream());
 
-        //Selector de flowpane
-        chatfield.setOnKeyPressed(event -> {
+        /**
+         * Eventos del chatfield de puertos, al ingresar un puerto y darle enter se cambia el
+         * flowpane a uno que contenga los mensajes del puerto escrito.
+         */
+        portfield.setOnKeyPressed(event -> {
             if(event.getCode().equals(KeyCode.ENTER)) {
 
+<<<<<<< Updated upstream
                 FlowPane flowpane = ArrayList.tester(chatfield.getText());
+=======
+                actualport = portfield.getText();
+                FlowPane flowpane = ArrayList.tester(actualport);
+>>>>>>> Stashed changes
                 base.setCenter(flowpane);
 
             }
         });
 
+<<<<<<< Updated upstream
         // Hilo escritor
         Thread sender = new Thread(new Runnable()
         {
@@ -81,43 +92,76 @@ public class Client extends Application
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                        }
-                    });
-
-                }
+=======
+        portfield.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 1) {
+                portfield.clear();
             }
         });
 
-        // Hilo lector
-        Thread reader = new Thread(new Runnable()
-        {
-            @Override
-            public void run() {
-                boolean firstmessage = true;
+        /**
+         *  Hilo que espera a el evento del textfield (escribir mensaje + darle al enter) para
+         *  enviarlo directo a su destino.
+         */
+        Thread sender = new Thread(() -> {
+            while (true) {
 
-                while (true) {
+                chatfield.setOnKeyPressed(event -> {
+                    if(event.getCode().equals(KeyCode.ENTER)) {
 
-                    try {
-                        String message = datainputstream.readUTF();
+                        try {
+                            FlowPane flowpane = (FlowPane) base.getCenter();
+                            // Escribe en el output
+                            dataoutputstream.writeUTF(chatfield.getText() + "::" + actualport);
+                            flowpane.getChildren().add(Labels.Textconverter(chatfield.getText(), true));
+                            chatfield.clear();
 
-                        if(firstmessage){
-                            horizontalTB.getItems().add(FirstMessage(message));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+>>>>>>> Stashed changes
+                        }
+                    }
+                });
 
-                        }else{
+            }
+        });
 
+        /**
+         * Hilo lector, espera a que el dadainputstream reciba un nuevo mensaje y coloca el flowpane
+         * correspondiente a dicha conversación
+         */
+        Thread reader = new Thread(() -> {
+            boolean firstmessage = true;
+
+            while (true) {
+
+                try {
+                    String message = datainputstream.readUTF();
+
+                    if(firstmessage){
+                        horizontalTB.getItems().add(FirstMessage(message));
+
+                    }else{
+
+<<<<<<< Updated upstream
                             actualport = TextWorker.portdivider(message);
                             chatfield.setText(actualport);
                             FlowPane flowpane = ArrayList.tester(actualport);
                             Platform.runLater(() -> flowpane.getChildren().add(Labels.Textconverter(message, false)));
                             base.setCenter(flowpane);
+=======
+                        actualport = TextWorker.portdivider(message);
+                        Platform.runLater(() -> flowfixer = ArrayList.tester(actualport));
+                        Platform.runLater(() -> flowfixer.getChildren().add(Labels.Textconverter(message, false)));
+                        Platform.runLater(() -> base.setCenter(flowfixer));
+>>>>>>> Stashed changes
 
-                        }
-                    } catch (IOException e) {
-
-                        e.printStackTrace();
                     }
-                    firstmessage = false;
+                } catch (IOException e) {
+
+                    e.printStackTrace();
                 }
+                firstmessage = false;
             }
         });
 
@@ -127,19 +171,33 @@ public class Client extends Application
 
     }
 
-    public void start(Stage Stage) throws FileNotFoundException {
+    /**
+     * Ejecución de la sección gráfica del código.
+     * @param Stage
+     */
+    public void start(Stage Stage) {
 
         //Toolbar HorizontalTB config
-        horizontalTB.getItems().add(chatfield);
+        horizontalTB.getItems().add(portfield);
 
+<<<<<<< Updated upstream
         //Toolbar verticalTB config
         verticalTB.setOrientation(Orientation.VERTICAL);
+=======
+        //Textfield messagefield config
+        chatfield.setMinHeight(35);
+        chatfield.setFont(new Font("Arial Black", 12));
+>>>>>>> Stashed changes
 
         //BorderPane Config
-        base.setBottom(messagefield);
+        base.setBottom(chatfield);
         base.setTop(horizontalTB);
+<<<<<<< Updated upstream
         base.setLeft(verticalTB);
         //base.setCenter(messages);
+=======
+        base.setLeft(Toolbars.getRecentchatstoolbar());
+>>>>>>> Stashed changes
         base.setStyle("-fx-background-color:#3b3838");
 
         Scene mainscene = new Scene(base,650,730);

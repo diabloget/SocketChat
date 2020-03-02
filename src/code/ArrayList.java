@@ -1,21 +1,27 @@
 package code;
 
-import gui.Buttons;
 import gui.Flowpanes;
+<<<<<<< Updated upstream
 import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
+=======
+import gui.Labels;
+>>>>>>> Stashed changes
 import javafx.scene.layout.FlowPane;
-import javafx.scene.text.Font;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.List;
 
 public class ArrayList {
     public static List<FlowPane> flowpanes = new java.util.ArrayList<>();
     public static List<String> ports = new java.util.ArrayList<>();
 
+    /**
+     * Método que al recibir un puerto nuevo, crea un flowpane para su chat y agrega a ambos a sus
+     * correspondientes arraylist, en caso de ya existir el puerto en la arraylist, consigue su
+     * índice para con él extraer el flowpane asociado a ese puerto y así mostrar el chat con él.
+     * @param port
+     * @return flowpane
+     */
     public static FlowPane tester(String port){
         if(ports.indexOf(port) >= 0){
             return flowpanes.get(ports.indexOf(port));
@@ -29,6 +35,7 @@ public class ArrayList {
         }
     }
 
+<<<<<<< Updated upstream
     public static void flowportadder(String port, FlowPane flowpane){
         flowpanes.add(flowpane);
         ports.add(port);
@@ -53,4 +60,6 @@ public class ArrayList {
         return recentchat;
     }
 
+=======
+>>>>>>> Stashed changes
 }
