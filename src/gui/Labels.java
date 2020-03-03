@@ -1,17 +1,10 @@
 package gui;
 
-import code.ArrayList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-<<<<<<< Updated upstream
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-=======
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.layout.FlowPane;
->>>>>>> Stashed changes
 import javafx.scene.text.Font;
 
 public class Labels {
@@ -26,8 +19,8 @@ public class Labels {
     private static Label Textlabel(String port, String text, boolean own) {
         Label messagelabel = new Label(port + text);
         messagelabel.setFont(new Font("Arial Black", 12));
-        messagelabel.setMaxWidth(450);
-        messagelabel.setMinWidth(450);
+        messagelabel.setMaxWidth(435);
+        messagelabel.setMinWidth(435);
         messagelabel.setWrapText(true);
 
         if(own){
@@ -51,7 +44,7 @@ public class Labels {
 
     /**
      * Método que trabaja en conjunto con el método Textlabel para configurar los labels
-     * correspondientes a los mensajes recibidos/enviados dentro del flowpane.
+     * correspondientes a los mensajes recibidos/enviados dentro del VBox.
      * @param message
      * @param own
      * @return label messagelabel
@@ -94,11 +87,18 @@ public class Labels {
         yourport.setStyle("-fx-background-color:#eeee11");
         yourport.setFont(new Font("Arial Black", 15));
         yourport.setWrapText(true);
+
+        yourport.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 1) {
+                Clipboard clipboard = Clipboard.getSystemClipboard();
+                ClipboardContent content = new ClipboardContent();
+                content.putString(port);
+                clipboard.setContent(content);
+            }
+        });
         return yourport;
 
     }
-<<<<<<< Updated upstream
-=======
 
     /**
      * Método para agregar los labels que indican los puertos con los que se habló recientemente.
@@ -142,6 +142,5 @@ public class Labels {
         return top;
     }
 
->>>>>>> Stashed changes
 
 }
