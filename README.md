@@ -1,5 +1,5 @@
 # SocketChat
-Tarea número uno de Datos 1, primer semestre 2020
+Tarea número uno de Datos 1, primer semestre del 2020.  
 
 ### Instalación e Instrucciones de uso.
 ### 1.  
